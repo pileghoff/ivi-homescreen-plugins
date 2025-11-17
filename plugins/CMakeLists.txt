@@ -110,6 +110,9 @@ PLUGIN_OPTION(url_launcher "Includes URL Launcher Plugin" OFF)
 
 PLUGIN_OPTION(video_player_linux "Include Video Player plugin" OFF)
 
+PLUGIN_OPTION(clair_native_video "Include Clair Native Video plugin" ON)
+
+
 if (BUILD_PLUGIN_CLOUD_FIRESTORE OR BUILD_PLUGIN_FIREBASE_AUTH OR BUILD_PLUGIN_FIREBASE_STORAGE)
     PLUGIN_OPTION(firebase_core "Plugin Firebase Core" ON)
     include(firebase)

@@ -16,6 +16,7 @@
 
 #include "generated_plugin_registrant.h"
 
+#include "clair_native_video/include/clair_native_video_plugin.h"
 #include "config/plugins.h"
 
 static constexpr char kKeyId[] = "id";
@@ -77,6 +78,10 @@ void PluginsApiRegisterPlugins(FlutterDesktopEngineRef engine) {
 #endif
 #if ENABLE_PLUGIN_VIDEO_PLAYER_LINUX
   VideoPlayerLinuxPluginCApiRegisterWithRegistrar(
+      FlutterDesktopGetPluginRegistrar(engine, ""));
+#endif
+#if ENABLE_PLUGIN_CLAIR_NATIVE_VIDEO
+  ClairNativeVideoPluginCApiRegisterWithRegistrar(
       FlutterDesktopGetPluginRegistrar(engine, ""));
 #endif
 #if ENABLE_PLUGIN_CAMERA
